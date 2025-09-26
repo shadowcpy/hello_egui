@@ -45,7 +45,7 @@ impl<'a, 'f, Errors: EguiValidationReport> FormField<'a, 'f, Errors> {
     pub fn ui(self, ui: &mut egui::Ui, content: impl Widget) -> Response {
         let error = self.error;
 
-        ui.vertical(|ui| {
+        ui.vertical_centered(|ui| {
             let id = ui.auto_id_with("form_field");
             let blurred = ui.memory_mut(|mem| *mem.data.get_temp_mut_or(id, false));
 
